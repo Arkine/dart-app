@@ -13,10 +13,10 @@ class _$TodoFooterProps extends FluxUiProps<TodoActions, TodoStore> {
 class TodoFooterComponent extends FluxUiComponent<TodoFooterProps> {
   @override
   render() {
-    return (Dom.div()(
+    return (Dom.div()..className = 'py-3 mx-n1 clearfix')(
       (Button()
         ..addTestId('clearTodoList')
-        ..className = 'float-right'
+        ..className = 'float-right mx-1 btn'
         ..skin = ButtonSkin.DANGER
         ..size = ButtonSize.SMALL
         ..onClick = ((event) => props.clearTodoList()))(
@@ -24,12 +24,12 @@ class TodoFooterComponent extends FluxUiComponent<TodoFooterProps> {
       ),
       (Button()
         ..addTestId('clearCompletedTodos')
-        ..className = 'float-right'
+        ..className = 'float-right mx-1 btn'
         ..skin = ButtonSkin.WARNING
         ..size = ButtonSize.SMALL
         ..onClick = ((event) => props.clearCompletedTodos()))(
         'Clear Completed',
       ),
-    ));
+    );
   }
 }
