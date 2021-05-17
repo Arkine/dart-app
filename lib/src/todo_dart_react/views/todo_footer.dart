@@ -19,7 +19,7 @@ class TodoFooterComponent extends FluxUiComponent<TodoFooterProps> {
         ..className = 'float-right'
         ..skin = ButtonSkin.DANGER
         ..size = ButtonSize.SMALL
-        ..onClick = ((event) => props.clearCompletedTodos()))(
+        ..onClick = ((event) => props.clearTodoList()))(
         'Clear All',
       ),
       (Button()
