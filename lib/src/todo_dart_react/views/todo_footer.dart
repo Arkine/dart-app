@@ -16,7 +16,7 @@ class TodoFooterComponent extends FluxUiComponent<TodoFooterProps> {
       ..skin = ButtonSkin.DANGER
       ..size = ButtonSize.SMALL
       ..onClick = ((event) => props.clearCompletedTodos()))(
-      'Delete',
+      'Remove Completed',
     );
   }
 }
