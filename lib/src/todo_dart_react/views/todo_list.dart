@@ -1,6 +1,9 @@
 part of '../components.dart';
 
 typedef AddTodoCallback(Todo todo);
+typedef ClearCompletedTodosCallback();
+typedef ClearTodoListCallback();
+typedef CompleteTodoCallback(Todo todo);
 typedef DeleteTodoCallback(Todo todo);
 
 @Factory()
@@ -10,6 +13,9 @@ UiFactory<TodoListProps> TodoList = _$TodoList;
 class _$TodoListProps extends UiProps {
   List<Todo> todos;
   AddTodoCallback addTodo;
+  ClearCompletedTodosCallback clearCompletedTodos;
+  ClearTodoListCallback clearTodoList;
+  CompleteTodoCallback completeTodo;
   DeleteTodoCallback deleteTodo;
 }
 
@@ -40,6 +46,10 @@ class TodoListComponent extends UiComponent<TodoListProps> {
       (ListGroup()..addTestId('todoListGroup'))(
         _renderListItems(),
       ),
+      (TodoFooter()
+        ..addTestId('todoFooter')
+        ..clearCompletedTodos = props.clearCompletedTodos
+        ..clearTodoList = props.clearTodoList)(),
     );
   }
 }

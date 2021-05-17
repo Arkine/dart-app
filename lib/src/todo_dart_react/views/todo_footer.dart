@@ -4,7 +4,10 @@ part of '../components.dart';
 UiFactory<TodoFooterProps> TodoFooter = _$TodoFooter;
 
 @Props()
-class _$TodoFooterProps extends FluxUiProps<TodoActions, TodoStore> {}
+class _$TodoFooterProps extends FluxUiProps<TodoActions, TodoStore> {
+  ClearCompletedTodosCallback clearCompletedTodos;
+  ClearTodoListCallback clearTodoList;
+}
 
 @Component()
 class TodoFooterComponent extends FluxUiComponent<TodoFooterProps> {
