@@ -15,7 +15,7 @@ class TodoStore extends Store {
     triggerOnActionV2<Todo>(_actions.deleteTodo, (todo) => _todos.remove(todo));
     triggerOnActionV2<Null>(_actions.clearTodoList, (_) => _todos = []);
     triggerOnActionV2<Null>(_actions.clearCompletedTodos,
-        (_) => todos.removeWhere((todo) => todo.completed == false));
+        (_) => _todos.removeWhere((todo) => todo.completed));
   }
 
   final TodoActions _actions;
