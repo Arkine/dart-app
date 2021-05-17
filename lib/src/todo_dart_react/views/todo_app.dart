@@ -13,7 +13,7 @@ class TodoAppComponent extends FluxUiComponent<TodoAppProps> {
     return (TodoList()
       ..addTodo = props.actions.addTodo
       ..deleteTodo = props.actions.deleteTodo
-      ..completeTodo = props.actions.completeTodo
+      ..toggleCompleteTodo = props.actions.toggleCompleteTodo
       ..clearTodoList = props.actions.clearTodoList
       ..clearCompletedTodos = props.actions.clearCompletedTodos
       ..todos = props.store.todos)();

@@ -10,8 +10,8 @@ class TodoStore extends Store {
     ];
 
     triggerOnActionV2<Todo>(_actions.addTodo, (todo) => _todos.add(todo));
-    triggerOnActionV2<Todo>(
-        _actions.completeTodo, (todo) => todo.completed = true);
+    triggerOnActionV2<Todo>(_actions.toggleCompleteTodo,
+        (todo) => todo.completed = !todo.completed);
     triggerOnActionV2<Todo>(_actions.deleteTodo, (todo) => _todos.remove(todo));
     triggerOnActionV2<Null>(_actions.clearTodoList, (_) => _todos = []);
     triggerOnActionV2<Null>(_actions.clearCompletedTodos,

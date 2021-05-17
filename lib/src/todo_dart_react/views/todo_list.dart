@@ -3,7 +3,7 @@ part of '../components.dart';
 typedef AddTodoCallback(Todo todo);
 typedef ClearCompletedTodosCallback();
 typedef ClearTodoListCallback();
-typedef CompleteTodoCallback(Todo todo);
+typedef ToggleCompleteTodoCallback(Todo todo);
 typedef DeleteTodoCallback(Todo todo);
 
 @Factory()
@@ -15,7 +15,7 @@ class _$TodoListProps extends UiProps {
   AddTodoCallback addTodo;
   ClearCompletedTodosCallback clearCompletedTodos;
   ClearTodoListCallback clearTodoList;
-  CompleteTodoCallback completeTodo;
+  ToggleCompleteTodoCallback toggleCompleteTodo;
   DeleteTodoCallback deleteTodo;
 }
 
@@ -30,7 +30,8 @@ class TodoListComponent extends UiComponent<TodoListProps> {
         (TodoListItem()
           ..key = todo.content
           ..todo = todo
-          ..deleteTodo = props.deleteTodo)(),
+          ..deleteTodo = props.deleteTodo
+          ..toggleCompleteTodo = props.toggleCompleteTodo)(),
       );
     }
 

@@ -7,6 +7,7 @@ UiFactory<TodoListItemProps> TodoListItem = _$TodoListItem;
 class _$TodoListItemProps extends UiProps {
   Todo todo;
   DeleteTodoCallback deleteTodo;
+  ToggleCompleteTodoCallback toggleCompleteTodo;
 }
 
 @Component()
@@ -16,7 +17,8 @@ class TodoListItemComponent extends UiComponent<TodoListItemProps> {
     return ListGroupItem()(
       (Dom.input()
         ..className = 'mr-3'
-        ..type = 'checkbox')(),
+        ..type = 'checkbox'
+        ..onChange = ((event) => props.toggleCompleteTodo(props.todo)))(),
       Dom.span()(
         props.todo.content,
       ),
