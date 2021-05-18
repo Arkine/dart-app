@@ -16,6 +16,7 @@ part 'stores/todo_store.dart';
 part 'components/shared.dart';
 part 'components/button.dart';
 part 'components/button_group.dart';
+part 'components/icon.dart';
 part 'components/list_group.dart';
 part 'components/list_group_item.dart';
 part 'components/progress.dart';
