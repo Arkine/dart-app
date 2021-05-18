@@ -14,7 +14,10 @@ class _$TodoListItemProps extends UiProps {
 class TodoListItemComponent extends UiComponent<TodoListItemProps> {
   @override
   render() {
-    return ListGroupItem()(
+    return (ListGroupItem()
+      ..skin = (props.todo.completed == true
+          ? ListGroupItemSkin.SUCCESS
+          : ListGroupItemSkin.DEFAULT))(
       (Dom.input()
         ..className = 'mr-3'
         ..type = 'checkbox'
