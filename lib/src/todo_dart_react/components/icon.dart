@@ -23,19 +23,18 @@ class IconComponent<T extends IconProps, S extends IconState>
 
   @override
   render() {
-    return renderIcon(props.children);
+    return renderIcon();
   }
 
-  ReactElement renderIcon(dynamic children) {
+  ReactElement renderIcon() {
     return (Dom.i()
       ..addProps(copyUnconsumedDomProps())
       ..className = getIconClasses().toClassName()
-      ..type = props.type
-      ..addProps(ariaProps()))(children);
+      ..addProps(ariaProps()))();
   }
 
   ClassNameBuilder getIconClasses() {
-    return forwardingClassNameBuilder()..add('bi')..add(props.type.className);
+    return forwardingClassNameBuilder()..add(props.type.className);
   }
 }
 

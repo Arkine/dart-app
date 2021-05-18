@@ -15,13 +15,12 @@ class TodoFooterComponent extends FluxUiComponent<TodoFooterProps> {
   render() {
     return (Dom.div()..className = 'py-3 mx-n1 clearfix')(
       (Button()
-        ..addTestId('clearTodoList')
-        ..className = 'float-right mx-1 btn'
-        ..skin = ButtonSkin.DANGER
-        ..size = ButtonSize.SMALL
-        ..onClick = ((event) => props.clearTodoList()))(
-        'Clear All',
-      ),
+            ..addTestId('clearTodoList')
+            ..className = 'float-right mx-1 btn'
+            ..skin = ButtonSkin.DANGER
+            ..size = ButtonSize.SMALL
+            ..onClick = ((event) => props.clearTodoList()))(
+          (Icon()..type = IconType.TRASH)(), (('Clear All'))),
       (Button()
         ..addTestId('clearCompletedTodos')
         ..className = 'float-right mx-1 btn'
