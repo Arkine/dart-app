@@ -23,7 +23,7 @@ class TodoFooterComponent extends FluxUiComponent<TodoFooterProps> {
           (Icon()..type = IconType.TRASH)(), (('Clear All'))),
       (Button()
         ..addTestId('clearCompletedTodos')
-        ..className = 'float-right mx-1 btn'
+        ..className = 'float-right mx-1 btn text-white'
         ..skin = ButtonSkin.WARNING
         ..size = ButtonSize.SMALL
         ..onClick = ((event) => props.clearCompletedTodos()))(

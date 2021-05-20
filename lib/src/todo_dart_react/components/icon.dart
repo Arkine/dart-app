@@ -30,7 +30,7 @@ class IconComponent<T extends IconProps, S extends IconState>
     return (Dom.i()
       ..addProps(copyUnconsumedDomProps())
       ..className = getIconClasses().toClassName()
-      ..addProps(ariaProps()))();
+      ..addProps(ariaProps()..role = 'presentation'))();
   }
 
   ClassNameBuilder getIconClasses() {
